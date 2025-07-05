@@ -10,7 +10,7 @@ function page({params}) {
     useEffect(() => {
         async function fetchPost() {
             try {
-                const response = await axios.get(`http://localhost:4000/posts/${id}`)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/posts/${id}`)
                 // console.log(response.data,"single post");
                 setPost(response.data)
             } catch (error) {
