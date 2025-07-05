@@ -23,7 +23,7 @@ function page() {
     e.preventDefault();
     // console.log(formData,"form Data")
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_URL}/posts`, formData);
+      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/posts`, formData);
       toast.success("Post Save Successfully")
         router.push("/")
     } catch (error) {

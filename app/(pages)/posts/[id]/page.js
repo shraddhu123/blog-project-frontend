@@ -15,7 +15,7 @@ function page({ params }) {
     useEffect(() => {
         async function fetchPost() {
             try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_URL}/posts/${id}`)
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/${id}`)
                 // console.log(response.data);
                 setPost(response.data)
             } catch (error) {
@@ -26,7 +26,7 @@ function page({ params }) {
     }, [id])
      async function handleDelete(){
         try{
-           await axios.delete(`${process.env.NEXT_PUBLIC_URL}/posts/${id}`)
+           await axios.delete(`${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/${id}`)
              console.log("post deleted successfully")
              toast.error("post deleted successfully")
              router.push("/")

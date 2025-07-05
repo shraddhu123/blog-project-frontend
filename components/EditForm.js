@@ -23,7 +23,7 @@ function EditForm({initialPost}) {
     // console.log(formData,"form Data")
     try {
       const id=initialPost._id;
-      await axios.put(`${process.env.NEXT_PUBLIC_URL}/posts/${id}`, formData);
+      await axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}/posts/${id}`, formData);
       toast.success("Post Updated Successfully")
         router.push("/")
     } catch (error) {
